@@ -15,7 +15,7 @@ const CountChart = () => {
                 <Image src="/moreDark.png" alt="more" width={20} height={20} />
             </div>
             {/* charts */}
-            <div className="w-full h-[75%]">
+            <div className="w-full h-[75%] relative">
                 <ResponsiveContainer>
                     <RadialBarChart
                         cx="50%"
@@ -25,13 +25,17 @@ const CountChart = () => {
                         barSize={32}
                         data={radiaChartData}
                     >
-                        <RadialBar
-                            label={{ position: 'insideStart', fill: '#fff' }}
-                            background
-                            dataKey="count"
-                        />
+                        <RadialBar background dataKey="count" />
                     </RadialBarChart>
                 </ResponsiveContainer>
+
+                <Image
+                    src="/maleFemale.png"
+                    alt="male"
+                    width={50}
+                    height={50}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
             </div>
             {/* bottom */}
             <div className="flex justify-center gap-16">

@@ -27,7 +27,7 @@ const Navbar = () => {
                 </div>
                 {/* username and permission */}
                 <div className="flex flex-col">
-                    <div className="text-xs leading-3 font-medium">John Doe</div>
+                    <div className="text-xs text-gray-500 leading-3 font-medium">John Doe</div>
                     <div className="text-[10px] text-gray-500 text-right">Admin</div>
                 </div>
                 {/* user avatar */}
