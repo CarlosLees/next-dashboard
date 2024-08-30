@@ -1,4 +1,4 @@
-import { Calendar, momentLocalizer, View, Views } from 'react-big-calendar';
+import { Calendar, Event, momentLocalizer, View, Views } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import { useState } from 'react';
@@ -14,7 +14,7 @@ moment.tz.setDefault('Asia/Shanghai');
 
 const localizer = momentLocalizer(moment);
 
-const MyEvent = ({ event }) => (
+const MyEvent = ({ event }: { event: Event }) => (
     <div>
         <p>{event.title}</p>
     </div>
@@ -24,7 +24,7 @@ const BigCalendar = () => {
     const [view, setView] = useState<View>(Views.WORK_WEEK);
 
     return (
-        <div>
+        <div className="h-full relative pb-8 hidden sm:block">
             <Calendar
                 components={{
                     event: MyEvent,
@@ -35,7 +35,7 @@ const BigCalendar = () => {
                 endAccessor="end"
                 views={['day', 'work_week'] as View[]}
                 view={view}
-                style={{ height: '98%' }}
+                style={{ minHeight: '98%' }}
                 onView={(selectView) => setView(selectView)}
                 min={new Date(2025, 1, 0, 8, 0, 0)}
                 max={new Date(2025, 1, 0, 22, 0, 0)}
