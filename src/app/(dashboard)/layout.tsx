@@ -17,7 +17,7 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
                 <Menu />
             </div>
             {/* right */}
-            <div className="w-5/6 md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll">
+            <div className="w-5/6 md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll flex flex-col">
                 <Navbar />
                 {children}
             </div>
